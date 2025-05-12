@@ -10,7 +10,7 @@ function Hero() {
         </div>
         <div style={styles.imageContainer}>
           <img
-            src="/Harsh_img.png"
+            src={`${import.meta.env.BASE_URL}Harsh_img.png`}
             alt="Harshit Mehra"
             className="hero-image"
             style={styles.image}

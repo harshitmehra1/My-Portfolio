@@ -14,7 +14,7 @@ function About() {
         </div>
         <div style={styles.imageWrapper}>
           <img
-            src="/DA_img.png"
+            src= {`${import.meta.env.BASE_URL}DA_img.png`}
             alt="About me"
             style={styles.image}
           />
