@@ -97,7 +97,7 @@ const styles = {
     textAlign: "left",
   },
   projectTitle: {
-    fontSize: "2.6rem",
+    fontSize: "2.5rem",
     marginBottom: "20px",
     display: "flex",
     alignItems: "center",
@@ -131,7 +131,7 @@ const styles = {
       textAlign: 'center', // Center text on mobile
     },
     projectImage: {
-      maxWidth: '90%', // Reduce the image size on smaller screens
+      maxWidth: '80%', // Reduce the image size on smaller screens
       height: 'auto', // Maintain the aspect ratio
     },
   },
