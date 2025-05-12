@@ -45,13 +45,13 @@ function Projects() {
           >
             <div style={styles.projectText}>
               <a
-  href={project.repo}
-  target="_blank"
-  rel="noopener noreferrer"
-  style={{ textDecoration: "none", color: "inherit" }}
->
-  <h2 style={styles.projectTitle}>{project.title}</h2>
-</a>
+                href={project.repo}
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ textDecoration: "none", color: "inherit" }}
+              >
+                <h2 style={styles.projectTitle}>{project.title}</h2>
+              </a>
 
               <p style={styles.projectDescription}>{project.description}</p>
             </div>
@@ -88,6 +88,7 @@ const styles = {
     justifyContent: "space-between",
     padding: "0 5%",
     borderBottom: "1px solid #334155",
+    flexWrap: "wrap", // To allow wrapping on smaller screens
   },
   projectText: {
     flex: 1,
@@ -102,13 +103,6 @@ const styles = {
     alignItems: "center",
     gap: "10px",
   },
-  repoLink: {
-    fontSize: "1.4rem",
-    textDecoration: "none",
-    color: "#6366f1",
-    marginLeft: "8px",
-    transition: "opacity 0.3s",
-  },
   projectDescription: {
     fontSize: "1.1rem",
     lineHeight: "1.6",
@@ -117,12 +111,29 @@ const styles = {
     flex: 1,
     textAlign: "center",
     padding: "20px",
+    minWidth: "300px", // Ensure space for images on mobile
   },
   projectImage: {
     maxWidth: "100%",
     maxHeight: "80vh",
     borderRadius: "12px",
     boxShadow: "0 0 20px rgba(0,0,0,0.3)",
+    objectFit: "cover", // Maintain image aspect ratio on all screens
+  },
+  // Mobile media query adjustments
+  '@media (max-width: 768px)': {
+    projectRow: {
+      height: "auto", // Allow content to be flexible on small screens
+      flexDirection: 'column', // Stack text and image vertically on mobile
+      justifyContent: 'center', // Align center on small screens
+    },
+    projectText: {
+      textAlign: 'center', // Center text on mobile
+    },
+    projectImage: {
+      maxWidth: '90%', // Reduce the image size on smaller screens
+      height: 'auto', // Maintain the aspect ratio
+    },
   },
 };
 
