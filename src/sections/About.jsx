@@ -26,7 +26,7 @@ function About() {
 
 const styles = {
   container: {
-    height: '100vh',
+    // height: '100vh',
     padding: '100px 40px',
     color: '#e2e8f0',
   },
@@ -66,6 +66,7 @@ const styles = {
     height: 'auto',
     borderRadius: '30px',
     objectFit: 'cover',
+    marginTop: '25px',
   },
 };
 
