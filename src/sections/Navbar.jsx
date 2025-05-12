@@ -28,12 +28,12 @@ const styles = {
   ul: {
     display: 'flex',
     justifyContent: 'right',
-    alignItems: 'left',
+    alignItems: 'center',
     listStyle: 'none',
     gap: '1.8rem',
     margin: 0,
+    marginRight: '10px',
     padding: 0,
-    marginRight: "33px",
   },
   link: {
     color: '#6366f1',
@@ -41,6 +41,12 @@ const styles = {
     fontWeight: 500,
     fontSize: '1rem',
     transition: 'color 0.3s',
+  },
+  // Media query for mobile (max-width 768px)
+  '@media (max-width: 768px)': {
+    nav: {
+      display: 'none', // This hides the entire navbar on small screens
+    },
   }
 };
 

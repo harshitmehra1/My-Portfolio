@@ -5,29 +5,33 @@ function Projects() {
       description:
         "AI-powered system that analyzes YouTube video titles and descriptions to suggest 3–5 relevant tags using TF-IDF and zero-shot classification. Includes an interactive Streamlit interface for searching.",
       image: `${import.meta.env.BASE_URL}yt_tag.jpg`,
+      repo: "https://github.com/harshitmehra1/Youtube_tag_recommender",
     },
     {
       title: "Semantic Search System",
       description:
         "Smart search engine for 1.3M+ online retail products using Elasticsearch and Sentence Transformers. Supports natural language queries and is evaluated with Precision@K and Recall@K.",
       image: `${import.meta.env.BASE_URL}sem_search.jpg`,
+      repo: "https://github.com/emadsidd/Semantic-Search",
     },
     {
       title: "AI Snake Game",
       description:
         "Playable Snake game where the snake is controlled by AI agents using BFS, A*, and Q-learning. Visualizes how agents make real-time decisions for pathfinding and survival.",
       image: `${import.meta.env.BASE_URL}ai_snake_2.jpg`,
+      repo: "https://github.com/harshitmehra1/Snake-Game-Ai",
     },
     {
       title: "Spotify Music Data Mining",
       description:
         "Built a machine learning pipeline to classify music genres using 30K Spotify tracks. Applied KNN, Naive Bayes, and Random Forest after feature engineering for accuracy improvement.",
       image: `${import.meta.env.BASE_URL}spotify.jpg`,
+      repo: "https://github.com/KiwoonHong/INFO-521_Final_project_Group2",
     },
   ];
 
   return (
-    <section style={styles.section}>
+    <section id="projects" style={styles.section}>
       <h1 style={styles.heading}>My Projects</h1>
       {projects.map((project, index) => {
         const isEven = index % 2 === 0;
@@ -40,7 +44,15 @@ function Projects() {
             }}
           >
             <div style={styles.projectText}>
-              <h2 style={styles.projectTitle}>{project.title}</h2>
+              <a
+  href={project.repo}
+  target="_blank"
+  rel="noopener noreferrer"
+  style={{ textDecoration: "none", color: "inherit" }}
+>
+  <h2 style={styles.projectTitle}>{project.title}</h2>
+</a>
+
               <p style={styles.projectDescription}>{project.description}</p>
             </div>
             <div style={styles.projectImageContainer}>
@@ -86,6 +98,16 @@ const styles = {
   projectTitle: {
     fontSize: "2.6rem",
     marginBottom: "20px",
+    display: "flex",
+    alignItems: "center",
+    gap: "10px",
+  },
+  repoLink: {
+    fontSize: "1.4rem",
+    textDecoration: "none",
+    color: "#6366f1",
+    marginLeft: "8px",
+    transition: "opacity 0.3s",
   },
   projectDescription: {
     fontSize: "1.1rem",
