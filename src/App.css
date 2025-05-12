@@ -1,0 +1,26 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #0f172a;
+  color: #f8fafc;
+  text-align: center;
+  overflow-x: hidden;
+}
+
+
+
+h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+p {
+  font-size: 1.25rem;
+}
+
+.sticky-image {
+  position: sticky;
+  top: calc(50vh - 125px); /* center vertically */
+  height: 250px;
+}
