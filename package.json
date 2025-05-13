@@ -6,6 +6,7 @@
   "homepage": "https://harshitmehra1.github.io/My-Portfolio",
   "scripts": {
     "dev": "vite",
+    "start": "vite",      
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",

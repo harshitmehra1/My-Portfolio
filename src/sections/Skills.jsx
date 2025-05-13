@@ -1,17 +1,34 @@
 function Skills() {
+  const base = import.meta.env.BASE_URL;
+
+  const skills = [
+    { name: "Python", icon: `${base}icons/python.png` },
+    { name: "SQL", icon: `${base}icons/sql.png` },
+    { name: "React", icon: `${base}icons/react.png` },
+    { name: "JavaScript", icon: `${base}icons/js.png` },
+    { name: "HTML", icon: `${base}icons/html.png` },
+    { name: "CSS", icon: `${base}icons/css.png` },
+    { name: "Git", icon: `${base}icons/git.png` },
+    { name: "Tableau", icon: `${base}icons/tableau.png` },
+    { name: "PostgreSQL", icon: `${base}icons/post.png` },
+    { name: "Power BI", icon: `${base}icons/powerbi.png` },
+    { name: "Excel", icon: `${base}icons/excel.png` },
+    { name: "MySQL", icon: `${base}icons/mysql.png` },
+    
+  ];
+
   return (
     <section id="skills" style={styles.section}>
       <div style={styles.container}>
-        <h2>My Skills</h2>
-        <ul style={styles.skillList}>
-          <li>Python / R</li>
-          <li>JavaScript / React</li>
-          <li>HTML / CSS</li>
-          <li>SQL / PostgreSQL / MySQL / SQL Server</li>
-          <li>Data Mining / Statistical Analysis / ETL</li>
-          <li>Seaborn / Tableau / Power BI / Excel</li>
-          <li>Git / GitHub</li>
-        </ul>
+        <h2 style={styles.heading}>My Skills</h2>
+        <div style={styles.grid}>
+          {skills.map((skill, index) => (
+            <div key={index} style={styles.skillCard}>
+              <img src={skill.icon} alt={skill.name} style={styles.icon} />
+              <p style={styles.label}>{skill.name}</p>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );
@@ -19,28 +36,40 @@ function Skills() {
 
 const styles = {
   section: {
-    height: '100vh',
     backgroundColor: '#0f172a',
     color: '#e2e8f0',
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-    padding: '20px',
+    padding: '60px 20px',
     textAlign: 'center',
+    minHeight: '100vh',
   },
   container: {
     maxWidth: '1000px',
-    width: '100%',
+    margin: '0 auto',
   },
-  skillList: {
-    listStyle: 'none',
-    padding: 0,
-    marginTop: '2rem',
+  heading: {
+    fontSize: '2rem',
+    marginBottom: '90px',
+  },
+  grid: {
     display: 'grid',
-    gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
-    gap: '1rem',
-    fontSize: '1.1rem',
-  }
+    gridTemplateColumns: 'repeat(auto-fit, minmax(120px, 1fr))',  // 4x3 on large screens, responsive on smaller screens
+    gap: '30px',
+  },
+  skillCard: {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+  },
+  icon: {
+    width: '90px',  // Increased icon size
+    height: '90px', // Increased icon size
+    objectFit: 'contain',
+    marginBottom: '10px',
+  },
+  label: {
+    fontSize: '1rem',
+    margin: 0,
+  },
 };
 
 export default Skills;

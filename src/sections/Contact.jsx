@@ -1,15 +1,37 @@
 function Contact() {
+  const base = import.meta.env.BASE_URL;
+
   return (
     <section id="contact" style={styles.section}>
-      <h2>Contact Me</h2>
-      <p>Have a question or want to work together? Let’s connect!</p>
+      <h2>Let's Connect</h2>
+      <p>Feel free to reach out through the platforms below or download my resume!</p>
       
-      <form style={styles.form} onSubmit={(e) => e.preventDefault()}>
-        <input type="text" placeholder="Your Name" style={styles.input} required />
-        <input type="email" placeholder="Your Email" style={styles.input} required />
-        <textarea placeholder="Your Message" style={styles.textarea} required />
-        <button type="submit" style={styles.button}>Send Message</button>
-      </form>
+      <div style={styles.iconContainer}>
+        {/* LinkedIn */}
+        <a href="https://www.linkedin.com/in/harshitmehra1/" target="_blank" rel="noopener noreferrer" style={styles.iconLink}>
+          <img src={`${base}icons/linkedin.png`} alt="LinkedIn" style={styles.icon} />
+        </a>
+        
+        {/* Instagram */}
+        <a href="https://www.instagram.com/your-instagram" target="_blank" rel="noopener noreferrer" style={styles.iconLink}>
+          <img src={`${base}icons/insta.png`} alt="Instagram" style={styles.icon} />
+        </a>
+
+        {/* Email */}
+        <a href="mailto:harshitmehra122@gmail.com" style={styles.iconLink}>
+          <img src={`${base}icons/gmail.png`} alt="Email" style={styles.icon} />
+        </a>
+
+        {/* GitHub */}
+        <a href="https://github.com/harshitmehra1" target="_blank" rel="noopener noreferrer" style={styles.iconLink}>
+          <img src={`${base}icons/github.png`} alt="GitHub" style={styles.icon} />
+        </a>
+        
+        {/* Resume Download */}
+        <a href={`${base}resume/your-resume.pdf`} download="Your_Resume" style={styles.iconLink}>
+          <img src={`${base}icons/cv.png`} alt="Resume" style={styles.icon} />
+        </a>
+      </div>
     </section>
   );
 }
@@ -21,36 +43,22 @@ const styles = {
     color: '#f8fafc',
     textAlign: 'center',
   },
-  form: {
+  iconContainer: {
     display: 'flex',
-    flexDirection: 'column',
-    gap: '1rem',
-    maxWidth: '500px',
-    margin: '2rem auto 0',
+    justifyContent: 'center',
+    gap: '2rem',
+    flexWrap: 'wrap',
+    marginTop: '2rem',
   },
-  input: {
-    padding: '0.75rem',
-    borderRadius: '6px',
-    border: '1px solid #334155',
-    fontSize: '1rem',
+  iconLink: {
+    display: 'inline-block',
+    textDecoration: 'none',
   },
-  textarea: {
-    padding: '0.75rem',
-    borderRadius: '6px',
-    border: '1px solid #334155',
-    fontSize: '1rem',
-    minHeight: '120px',
-    resize: 'vertical',
+  icon: {
+    width: '50px',
+    height: '50px',
+    objectFit: 'contain',
   },
-  button: {
-    padding: '0.75rem',
-    borderRadius: '6px',
-    border: 'none',
-    backgroundColor: '#3b82f6',
-    color: '#fff',
-    fontSize: '1rem',
-    cursor: 'pointer',
-  }
 };
 
 export default Contact;
