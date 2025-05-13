@@ -26,6 +26,10 @@ p {
 }
 
 
+
+
+/* For Contact */
+
 .icon-wrapper {
   position: relative;
   display: inline-block;
@@ -62,9 +66,30 @@ p {
 
 .icon-link:hover .icon-image {
   transform: scale(1.2);
-  filter: drop-shadow(0 0 8px #38bdf8); /* light blue glow */
+  filter: drop-shadow(0 0 10px #38bdf8); /* light blue glow */
 }
 
 .icon-link:hover .tooltip {
-  opacity: 1;
+  opacity: 1.2;
+}
+
+/* For Skills */
+
+.skill-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.skill-icon {
+  width: 90px;
+  height: 90px;
+  object-fit: contain;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.skill-card:hover .skill-icon {
+  transform: scale(1.2);
+  filter: drop-shadow(0 0 8px #ffffff); /* light blue glow */
 }

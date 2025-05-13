@@ -14,7 +14,6 @@ function Skills() {
     { name: "Power BI", icon: `${base}icons/powerbi.png` },
     { name: "Excel", icon: `${base}icons/excel.png` },
     { name: "MySQL", icon: `${base}icons/mysql.png` },
-    
   ];
 
   return (
@@ -23,8 +22,8 @@ function Skills() {
         <h2 style={styles.heading}>My Skills</h2>
         <div style={styles.grid}>
           {skills.map((skill, index) => (
-            <div key={index} style={styles.skillCard}>
-              <img src={skill.icon} alt={skill.name} style={styles.icon} />
+            <div key={index} className="skill-card">
+              <img src={skill.icon} alt={skill.name} className="skill-icon" />
               <p style={styles.label}>{skill.name}</p>
             </div>
           ))}
@@ -52,19 +51,8 @@ const styles = {
   },
   grid: {
     display: 'grid',
-    gridTemplateColumns: 'repeat(auto-fit, minmax(120px, 1fr))',  // 4x3 on large screens, responsive on smaller screens
+    gridTemplateColumns: 'repeat(auto-fit, minmax(120px, 1fr))',
     gap: '30px',
-  },
-  skillCard: {
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-  },
-  icon: {
-    width: '90px',  // Increased icon size
-    height: '90px', // Increased icon size
-    objectFit: 'contain',
-    marginBottom: '10px',
   },
   label: {
     fontSize: '1rem',
