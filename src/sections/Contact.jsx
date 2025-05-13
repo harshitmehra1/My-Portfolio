@@ -1,37 +1,59 @@
 function Contact() {
   const base = import.meta.env.BASE_URL;
 
+  const links = [
+    {
+      name: "LinkedIn",
+      url: "https://www.linkedin.com/in/harshitmehra1/",
+      icon: "linkedin.png",
+    },
+    {
+      name: "Instagram",
+      url: "https://www.instagram.com/your-instagram",
+      icon: "insta.png",
+    },
+    {
+      name: "Email",
+      url: "mailto:harshitmehra122@gmail.com",
+      icon: "gmail.png",
+    },
+    {
+      name: "GitHub",
+      url: "https://github.com/harshitmehra1",
+      icon: "github.png",
+    },
+    {
+      name: "Resume",
+      url: `${base}resume/your-resume.pdf`,
+      icon: "cv.png",
+      download: true,
+    },
+  ];
+
   return (
     <section id="contact" style={styles.section}>
       <h2>Let's Connect</h2>
       <p>Feel free to reach out through the platforms below or download my resume!</p>
-      
+
       <div style={styles.iconContainer}>
-        {/* LinkedIn */}
-        <a href="https://www.linkedin.com/in/harshitmehra1/" target="_blank" rel="noopener noreferrer" style={styles.iconLink}>
-          <img src={`${base}icons/linkedin.png`} alt="LinkedIn" style={styles.icon} />
-        </a>
-        
-        {/* Instagram */}
-        <a href="https://www.instagram.com/your-instagram" target="_blank" rel="noopener noreferrer" style={styles.iconLink}>
-          <img src={`${base}icons/insta.png`} alt="Instagram" style={styles.icon} />
-        </a>
-        
-
-        {/* Email */}
-        <a href="mailto:harshitmehra122@gmail.com" style={styles.iconLink}>
-          <img src={`${base}icons/gmail.png`} alt="Email" style={styles.icon} />
-        </a>
-
-        {/* GitHub */}
-        <a href="https://github.com/harshitmehra1" target="_blank" rel="noopener noreferrer" style={styles.iconLink}>
-          <img src={`${base}icons/github.png`} alt="GitHub" style={styles.icon} />
-        </a>
-        
-        {/* Resume Download */}
-        <a href={`${base}resume/your-resume.pdf`} download="Your_Resume" style={styles.iconLink}>
-          <img src={`${base}icons/cv.png`} alt="Resume" style={styles.icon} />
-        </a>
+        {links.map((link, index) => (
+          <div className="icon-wrapper" key={index}>
+            <a
+              href={link.url}
+              target={link.url.startsWith("http") ? "_blank" : "_self"}
+              rel="noopener noreferrer"
+              download={link.download || false}
+              className="icon-link"
+            >
+              <img
+                src={`${base}icons/${link.icon}`}
+                alt={link.name}
+                className="icon-image"
+              />
+              <span className="tooltip">{link.name}</span>
+            </a>
+          </div>
+        ))}
       </div>
     </section>
   );
@@ -50,15 +72,6 @@ const styles = {
     gap: '2rem',
     flexWrap: 'wrap',
     marginTop: '2rem',
-  },
-  iconLink: {
-    display: 'inline-block',
-    textDecoration: 'none',
-  },
-  icon: {
-    width: '50px',
-    height: '50px',
-    objectFit: 'contain',
   },
 };
 
