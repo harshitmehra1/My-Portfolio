@@ -16,6 +16,7 @@ function Contact() {
         <a href="https://www.instagram.com/your-instagram" target="_blank" rel="noopener noreferrer" style={styles.iconLink}>
           <img src={`${base}icons/insta.png`} alt="Instagram" style={styles.icon} />
         </a>
+        
 
         {/* Email */}
         <a href="mailto:harshitmehra122@gmail.com" style={styles.iconLink}>
